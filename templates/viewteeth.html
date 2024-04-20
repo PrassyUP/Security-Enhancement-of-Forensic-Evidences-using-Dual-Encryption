@@ -1,0 +1,44 @@
+{% include 'court_header.html' %}
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+      <h2><p class="animate__animated animate__fadeInUp">We provide platform that ensures compliance with legal standards and regulations regarding the protection and handling of forensic evidence,thereby upholding the integrity and admissibility of evidence in court.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+  <br><br><br><br><br><br><br><br><br><br>
+<center>
+    <h1 id="uy"><b>Teeth</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>Root diver</th>
+        <th>Appear</th>
+        <th>Color</th>
+        <th>Edge</th>
+        <th>Teeth indentation</th>
+        <th>Temporary teeth type</th>
+        <th>Permanent teeth type</th>
+        
+    </tr>
+    </thead>
+    {%for i in data['viewteeth']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['root_diver']}}</td>
+        <td>{{i['appear']}}</td>
+        <td>{{i['color']}}</td>
+        <td>{{i['edge']}}</td>
+        <td>{{i['teeth_indent']}}</td>
+        <td>{{i['temp_typ_teeth']}}</td>
+        <td>{{i['per_typ_teeth']}}</td>
+    
+      </tr>
+    {%endfor%}
+</table>
+</center>
+<br><br><br><br><br><br><br>
+{%include 'footer.html' %}

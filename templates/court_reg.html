@@ -1,0 +1,421 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <table>
+            <tr>
+                <th>Court Register Number</th>
+                <td><input type="text" name="crtregnum" id=""></td>
+            </tr>
+            <tr>
+                <th>Court name</th>
+                <td><input type="text" name="crtname" id=""></td>
+            </tr>
+            <tr>
+                <th>Type of court</th>
+                <td><input type="text" name="typcrt" id=""></td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td><input type="text" name="state" id=""></td>
+            </tr>
+            <tr>
+                <th>District</th>
+                <th><input type="text" name="dstr" id=""></th>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td><input type="text" name="address" id=""></td>
+            </tr>
+            <tr>
+                <th>Pincode</th>
+                <td><input type="number" name="pcode" id=""></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" id=""></td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td><input type="number" name="phno1" id=""></td>
+            </tr>
+            <tr>
+                <th>Alternate Phone Number</th>
+                <td><input type="number" name="phno2" id=""></td>
+            </tr>
+            <tr>
+                <th>Officer Name</th>
+                <td><input type="text" name="offname" id=""></td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <th><input type="text" name="uname" ></th> 
+            </tr>
+            <tr>
+                <th>Password</th>
+                <th><input type="password" name="passwd"></th>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" name="cosubmit" id=""></th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html> -->
+
+
+<html lang="tr">
+
+<head>
+
+
+    <style>
+        body{
+            background-image: url("static/assets/img/gallery/imagecourt.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>ForenSecure</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- <br><br><br><br><br> <br><br> -->
+    <div class="container">
+        <form class="form-horizontal" role="form" method="POST">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <b><h2>Register New Court</h2></b>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="name">Court Register Number</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="crtregnum" class="form-control" id="name" placeholder="Enter Register number" pattern="{a-zA-Z0-9}+" title="Only number and alphabets are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="name">Court Name</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="crtname" class="form-control" id="name" placeholder="Enter Court Name"  pattern="{a-zA-Z0-9}+" title="Only number and alphabets are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">Type of Court</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="typcrt" class="form-control" id="surname" placeholder="Type" pattern="{a-zA-Z0-9}+" title="Only number and alphabets are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">State</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="state" class="form-control" id="surname" placeholder="State" pattern="{a-zA-Z}+" title="Only alphabets are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">District</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="dstr" class="form-control" id="surname" placeholder="District" pattern="{a-zA-Z}+" title="Only alphabets are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">Address</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="address" class="form-control" id="surname" placeholder="Address" pattern="{a-zA-Z0-9}+" title="Only number and alphabets are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">Pincode</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="number" name="pcode" class="form-control" id="surname" placeholder="Pincode" pattern="{0-9}+" title="Only number are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">Email</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-at"></i>
+                            </div> -->
+                            <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com" pattern="{a-zA-Z0-9}+" title="Only number and alphabets are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">Phone Number</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="number" name="phno1" class="form-control" id="surname" placeholder="" pattern="{0-9}+" title="Only number are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">Alternate Phone Number</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="number" name="phno2" class="form-control" id="surname" placeholder="" pattern="{0-9}+" title="Only number are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">Officer Name</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="offname" class="form-control" id="surname" placeholder="Enter Officer Name" pattern="{a-zA-Z}+" title="Only alphabets are allowed" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="password">Username</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user-plus"></i>
+                            </div> -->
+                            <input type="text" name="uname" class="form-control" id="username" placeholder="Username" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="password">Password</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-key"></i>
+                            </div> -->
+                            <input type="password" name="passwd" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <button type="submit" id="button"  name="cosubmit" class="btn btn-success">
+                        <i class="fa fa-user-plus"></i>Register</button>
+                   
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <!-- <br><br><br> -->
+</body>
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Username</th>
+            <th scope="col">Register Date</th>
+            <th scope="col">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table> -->
+
+<script src="script.js"></script>
+
+</html>
+
+<script>
+    var userList = [];
+
+var config = {
+    date: {
+        day: "2-digit",
+        year: "numeric",
+        month: "long",
+        hour: "numeric",
+        minute: "2-digit"
+    }
+}
+
+var generateGUID = () => {
+    var s4 = () => {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
+var generateRow = user => `<tr>
+        <td>
+        ${user.name}
+        </td>
+        <td>
+        ${user.surname}
+        </td>
+        <td>
+        ${user.email}
+        </td>
+        <td>
+        ${user.username}
+        </td>
+        <td>
+        ${user.createDate.toLocaleDateString("tr", config.date)}
+        </td>
+        <td>
+            <button data-user="${user.id}" class="del">Del</button>
+            <button data-user="${user.id}" class="edit">Edit</button>
+        </td>
+    </tr>`;
+
+
+
+$("#button").click(() => {
+    let user = {
+        name: $('#name').val(),
+        surname: $('#surname').val(),
+        email: $('#email').val(),
+        username: $('#username').val(),
+        createDate: new Date(),
+        id: generateGUID()
+    };
+
+    userList.push(user);
+
+    let row = $(generateRow(user));
+
+    $(row).find(".del").click(function () {
+        if (window.confirm("Do you really want to delete?")) {
+            $(row).remove();
+        }
+    });
+
+    $(row).find(".edit").click(function () {
+        $("#edit").show();
+        $("#button").hide();
+    });
+
+
+
+    $('tbody').append(row);
+
+});
+
+
+
+</script>
+

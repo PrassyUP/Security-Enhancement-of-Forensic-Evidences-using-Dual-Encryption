@@ -1,0 +1,41 @@
+{% include 'court_header.html' %}
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+      <h2><p class="animate__animated animate__fadeInUp">We provide platform that ensures compliance with legal standards and regulations regarding the protection and handling of forensic evidence,thereby upholding the integrity and admissibility of evidence in court.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+  <br><br><br><br><br><br><br><br><br><br>
+<center>
+    <h1 id="ux"><b>Postmortem</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>Body temparature</th>
+        <th>Change in eye</th>
+        <th>Livor mortis</th>
+        <th>Degradation</th>
+        <th>Time since death in hrs</th>
+        <th>Degradation time</th>
+        
+    </tr>
+    </thead>
+    {%for i in data['viewpost']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['body_temp']}}</td>
+        <td>{{i['change_in_eye']}}</td>
+        <td>{{i['livor_mortis']}}</td>
+        <td>{{i['degradation']}}</td>
+        <td>{{i['time_snc_death_in_hrs']}}</td>
+        <td>{{i['degradation_time']}}</td>
+         </tr>
+    {%endfor%}
+</table>
+</center>
+<br><br><br><br><br><br><br>
+{% include 'footer.html' %}

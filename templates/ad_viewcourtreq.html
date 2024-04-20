@@ -1,0 +1,50 @@
+{% include 'admin_header.html' %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>ForenSecure</h1>
+      <h2>Fortify Forensic Integrity:Double Encryption for Unyielding Security</h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+<br><br><br><br><br><br><br><br><br>
+<center>
+    <h1 id="dd"><b>View Court Request</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Designation</th>
+        <th>Case Number</th>
+        <th>Type of crime</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Date</th>
+        <th>Evidence status</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    {%for i in data['B']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['fname']}}</td>
+        <td>{{i['lname']}}</td>
+        <td>{{i['designation']}}</td>
+        <td>{{i['case_num']}}</td>
+        <td>{{i['type_of_crime']}}</td>
+        <td>{{i['latitude']}}</td>
+        <td>{{i['longitude']}}</td>
+        <td>{{i['date']}}</td>
+        <td>{{i['evidence_status']}}</td>
+        <td><a href="?action=accept&pid={{i['crime_num']}}" class="btn btn-success">Accept</a></td>
+        <td><a href="?action=request&pid={{i['crime_num']}}" class="btn btn-danger">Reject</a></td> 
+    </tr>
+    {%endfor%}
+</table>
+</center>
+<br><br><br><br>
+
+{%include 'footer.html'%}

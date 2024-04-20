@@ -1,0 +1,396 @@
+{% include 'police_header.html' %}
+<br><br><br><br><br><br>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+        <h2><p class="animate__animated animate__fadeInUp">The platform provides trustful features for crime related activities such as adding and viewing crime which can only be accessed after authentication thereby maintaining the security.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <table>
+
+            <tr>
+                <th>First Name</th>
+                <td><input type="text" name="crifname" id=""></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td><input type="text" name="crilname" id=""></td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td><input type="text" name="cridesig" id=""></td>
+            </tr>
+            <tr>
+                <th>Case Number</th>
+                <td><input type="text" name="caseno" id=""></td>
+            </tr>
+            <tr>
+                <th>Type of crime</th>
+                <td><input type="text" name="typeofcri" id=""></td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td><input type="text" name="latit" id=""></td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td><input type="text" name="longi" id=""></td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td><input type="text" name="cristatus" id=""></td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td><input type="date" name="cridate" id=""></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="crisubmit" id=""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html> -->
+<br><br><br><br><br><br><br><br><br><br>
+<center>
+<html lang="tr">
+
+<head>
+
+    <script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+<script type="text/javascript">
+    // window.onload = function () {
+    function myFunction() {
+        var mapOptions = {
+            center: new google.maps.LatLng(9.9763482, 76.286272),
+            zoom: 14,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var infoWindow = new google.maps.InfoWindow();
+        var latlngbounds = new google.maps.LatLngBounds();
+        var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+        google.maps.event.addListener(map, 'click', function (e) {
+            alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+            document.getElementById('slati').value = e.latLng.lat();
+            document.getElementById('elongi').value = e.latLng.lng();
+
+
+        });
+    }
+
+</script>
+
+
+    <style>
+         body{
+            background-image: url("");
+            background-size: cover;
+            background-repeat: no-repeat;
+        } 
+    </style>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Bootstrap 4 Register Form</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-horizontal" role="form" method="POST">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <b><h2>Add New Crime</h2></b>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="name">Officer First Name</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="crifname" class="form-control" id="name" placeholder="Enter First Name" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="name">Officer Last Name</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="crilname" class="form-control" id="name" placeholder="Enter Last Name" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="text">Designation</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="cridesig" class="form-control" id="surname" placeholder="Designation" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="email">Case Number</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="caseno" class="form-control" id="surname" placeholder="Enter Case Number" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="text">Type of crime</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="typeofcri" class="form-control" id="surname" placeholder="Type of crime" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="text">Latitude</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="lati" class="form-control" placeholder="Latitude" id="slati" required autofocus>
+                            <a onclick="myFunction()" class="btn btn-danger" style="cursor: pointer;">View Map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="text">Longitude</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="longi" class="form-control" id="elongi" placeholder="Longitude" required >
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <th style="font-size: 25px; text-align: left;">LATITUDE</th>
+                <td style="color: black;"><br><input type="text" class="form-control" name="lati" id="slati"></td>
+                <td><a onclick="myFunction()" style="cursor: pointer;">View Map</a></td>
+            </div> -->
+           
+
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="name">Status</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-at"></i>
+                            </div> -->
+                            <input type="text" name="cristatus" class="form-control" id="email" placeholder="Status" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                <b><label for="date">Date</label></b>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="date" name="cridate" class="form-control" id="surname" placeholder="" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <button type="submit" id="button"  name="crisubmit" class="btn btn-success">
+                        <i class="fa fa-user-plus"></i>Submit</button>
+                   
+                </div>
+
+            </div>
+            <td colspan="2">
+                <div id="dvMap" style="width: 100%; height: 300px;"></div>
+            </td>
+
+        </form>
+    </div>
+</body>
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Username</th>
+            <th scope="col">Register Date</th>
+            <th scope="col">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table> -->
+
+<script src="script.js"></script>
+
+</html>
+
+<script>
+    var userList = [];
+
+var config = {
+    date: {
+        day: "2-digit",
+        year: "numeric",
+        month: "long",
+        hour: "numeric",
+        minute: "2-digit"
+    }
+}
+
+var generateGUID = () => {
+    var s4 = () => {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
+var generateRow = user => `<tr>
+        <td>
+        ${user.name}
+        </td>
+        <td>
+        ${user.surname}
+        </td>
+        <td>
+        ${user.email}
+        </td>
+        <td>
+        ${user.username}
+        </td>
+        <td>
+        ${user.createDate.toLocaleDateString("tr", config.date)}
+        </td>
+        <td>
+            <button data-user="${user.id}" class="del">Del</button>
+            <button data-user="${user.id}" class="edit">Edit</button>
+        </td>
+    </tr>`;
+
+
+
+$("#button").click(() => {
+    let user = {
+        name: $('#name').val(),
+        surname: $('#surname').val(),
+        email: $('#email').val(),
+        username: $('#username').val(),
+        createDate: new Date(),
+        id: generateGUID()
+    };
+
+    userList.push(user);
+
+    let row = $(generateRow(user));
+
+    $(row).find(".del").click(function () {
+        if (window.confirm("Do you really want to delete?")) {
+            $(row).remove();
+        }
+    });
+
+    $(row).find(".edit").click(function () {
+        $("#edit").show();
+        $("#button").hide();
+    });
+
+
+
+    $('tbody').append(row);
+
+});
+
+
+
+</script>
+</center>
+<br><br><br><br><br><br><br>
+
+{% include 'footer.html' %}

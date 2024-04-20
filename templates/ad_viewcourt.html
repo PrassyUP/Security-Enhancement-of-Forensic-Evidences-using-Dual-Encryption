@@ -1,0 +1,51 @@
+{% include 'admin_header.html' %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>ForenSecure</h1>
+      <h2>Fortify Forensic Integrity:Double Encryption for Unyielding Security</h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+<br><br><br><br><br><br><br><br><br>
+<center>
+    <h1 id="cc"><b>View Court</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>Court Register Number</th>
+        <th>Court name</th>
+        <th>Type of Court</th>
+        <th>State</th>
+        <th>District</th>
+        <th>Address</th>
+        <th>Pincode</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Alternate Phone Number</th>
+        <th>Officer Name</th>
+    </tr>
+    </thead>
+    {%for i in data['cview']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['crt_reg_num']}}</td>
+        <td>{{i['c_name']}}</td>
+        <td>{{i['ty_crt']}}</td>
+        <td>{{i['state']}}</td>
+        <td>{{i['district']}}</td>
+        <td>{{i['address']}}</td>
+        <td>{{i['pincode']}}</td>
+        <td>{{i['email']}}</td>
+        <td>{{i['phone1']}}</td>
+        <td>{{i['phone2']}}</td>
+        <td>{{i['officer_name']}}</td>
+        <!-- <td><a href="/accept?id={{['court_id']}}">Accept</a></td>
+        <td><a href="/reject?id={{['court_id']}}">Reject</a></td> -->
+    </tr>
+    {%endfor%}
+</table>
+</center>
+
+{%include 'footer.html'%}

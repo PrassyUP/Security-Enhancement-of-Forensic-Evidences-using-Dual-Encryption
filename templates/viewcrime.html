@@ -1,0 +1,56 @@
+{% include 'police_header.html' %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+        <h2><p class="animate__animated animate__fadeInUp">The platform provides trustful features for crime related activities such as adding and viewing crime which can only be accessed after authentication thereby maintaining the security.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+
+  <br><br><br><br><br><br><br><br><br><br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1 id="pp"><b>View Crime</b></h1><br><br>
+        <table border="1" class="table table-bordered">
+        <thead class="table-info">
+            <tr>
+            <th>Slno</th>
+            <th>Officer First name</th>
+            <th>Officer Last name</th>
+            <th>Designation</th>
+            <th>Case Number</th>
+            <th>Type of crime</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Date</th>
+            </tr>
+            </thead>
+            {%for i in data['viewcrime']%}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{i['fname']}}</td>
+                <td>{{i['lname']}}</td>
+                <td>{{i['designation']}}</td>
+                <td>{{i['case_num']}}</td>
+                <td>{{i['type_of_crime']}}</td>
+                <td>{{i['latitude']}}</td>
+                <td>{{i['longitude']}}</td>
+                <td>{{i['date']}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+    </center>
+</body>
+</html>
+<br><br><br><br><br><br><br><br>
+{% include 'footer.html' %}

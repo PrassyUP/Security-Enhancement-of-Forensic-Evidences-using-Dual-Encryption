@@ -1,0 +1,60 @@
+{% include 'staff_header.html' %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+      <h2><p class="animate__animated animate__fadeInUp">The platform provides features that maintains the integrity of forensic evidence, preventing any unauthorized modifications, alterations, or tampering during storage, transmission, or analysis.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+
+  <br><br><br><br><br><br><br><br><br><br><br>
+<center>
+    <h1 id="ff"><b>Evidences</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Designation</th>
+        <th>Case Number</th>
+        <th>Type of crime</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Date</th>
+        <th>Assign status</th>
+    </tr>
+    </thead>
+    {% for i in data['viewevid']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['fname']}}</td>
+        <td>{{i['lname']}}</td>
+        <td>{{i['designation']}}</td>
+        <td>{{i['case_num']}}</td>
+        <td>{{i['type_of_crime']}}</td>
+        <td>{{i['latitude']}}</td>
+        <td>{{i['longitude']}}</td>
+        <td>{{i['date']}}</td>
+        <td>{{i['assign_status']}}</td>
+        {% if i['assign_status'] == 'collection' %}
+        <td><a href="/finger?id={{i['crime_num']}}" class="btn btn-success">Fingerprint</a></td>
+        <td><a href="/footprint?fid={{i['crime_num']}}" class="btn btn-success">Footprint</a></td>
+        <td><a href="/video?vid={{i['crime_num']}}" class="btn btn-success">Video</a></td>
+        <td><a href="/audio?aid={{i['crime_num']}}" class="btn btn-success">Audio</a></td>
+        {%endif%}
+        {% if i['assign_status'] == 'examination' %} 
+        <td><a href="/hairtest?hid={{i['crime_num']}}" class="btn btn-success">Hair Test</a></td>
+        <td><a href="/postmortem?pid={{i['crime_num']}}" class="btn btn-success">Postmortem</a></td>
+        <td><a href="/teeth?tid={{i['crime_num']}}" class="btn btn-success">Teeth</a></td>
+        {%endif%}
+    </tr>
+    {%endfor%}
+
+</table>
+</center>
+<br><br><br><br><br>
+
+{%include 'footer.html'%}

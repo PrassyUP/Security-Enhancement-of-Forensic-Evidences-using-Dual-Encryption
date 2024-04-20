@@ -1,0 +1,43 @@
+{% include 'court_header.html' %}
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+      <h2><p class="animate__animated animate__fadeInUp">We provide platform that ensures compliance with legal standards and regulations regarding the protection and handling of forensic evidence,thereby upholding the integrity and admissibility of evidence in court.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+  <br><br><br><br><br><br><br><br><br><br>
+<center>
+    <h1 id="uv"><b>Footprint Evidence</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>Left length</th>
+        <th>Left width</th>
+        <th>Right length</th>
+        <th>Right width</th>
+        <th>Additional information</th>
+        <th>Height</th>
+        <th>Gender</th>
+        
+    </tr>
+    </thead>
+    {%for i in data['viewfoot']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['left_len']}}</td>
+        <td>{{i['left_width']}}</td>
+        <td>{{i['right_len']}}</td>
+        <td>{{i['right_width']}}</td>
+        <td>{{i['add_info']}}</td>
+        <td>{{i['height']}}</td>
+        <td>{{i['gender']}}</td>
+    </tr>
+    {%endfor%}
+</table>
+</center>
+<br><br><br><br><br><br><br>
+{%include 'footer.html'%}

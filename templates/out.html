@@ -1,0 +1,26 @@
+<!-- out.html -->
+{% include 'court_header.html'%}
+<br><br><br><br><br><br><br><br><br><br>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypted File</title>
+</head>
+<body> -->
+    <center>
+    <h1><b>Decrypted File</b></h1>
+    {% if decrypted_file_path %}
+    
+        <a href="{{ decrypted_file_path }}" download>
+            <img src="{{ decrypted_file_path }}" alt="Decrypted File" height="300" width="300">
+        </a>
+    {% else %}
+        <p>No decrypted file available</p>
+    {% endif %}
+<!-- </body>
+</html> -->
+</center>
+<br><br><br><br><br><br><br><br><br><br>
+{% include 'footer.html'%}

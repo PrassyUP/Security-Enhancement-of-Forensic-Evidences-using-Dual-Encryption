@@ -1,0 +1,64 @@
+{% include 'court_header.html' %}
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+      <h2><p class="animate__animated animate__fadeInUp">We provide platform that ensures compliance with legal standards and regulations regarding the protection and handling of forensic evidence,thereby upholding the integrity and admissibility of evidence in court.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+  <br><br><br><br><br><br><br><br><br><br>
+
+<center>
+    <h1 id="zz"><b>Request Evidence</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Designation</th>
+        <th>Case Number</th>
+        <th>Type of crime</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Date</th>
+        <th>Evidence status</th>
+        <th></th>
+    </tr>
+    </thead>
+    {%for i in data['couviewcr']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['fname']}}</td>
+        <td>{{i['lname']}}</td>
+        <td>{{i['designation']}}</td>
+        <td>{{i['case_num']}}</td>
+        <td>{{i['type_of_crime']}}</td>
+        <td>{{i['latitude']}}</td>
+        <td>{{i['longitude']}}</td>
+        <td>{{i['date']}}</td>
+        <td>{{i['status']}}</td>
+
+
+        {% if i['status']=='status' %}
+
+        <td><a href="?action=request&id={{i['crime_num']}}" class="btn btn-danger" style="width: 200px;">Request Evidence</a></td>
+
+        {%endif%}
+        <!-- {% if i['evidence_status']=='pending' %}
+     <td><a href="?action=request&id={{i['crime_num']}}" class="btn btn-danger" style="width: 200px;">Request Evidence</a></td>
+     {% endif %}
+
+     {% if i['evidence_status']=='accepted' %}
+     <td><a href="/askevidence?id={{i['crime_num']}}&id2={{i['case_num']}}&id3={{i['type_of_crime']}}#yy" class="btn btn-success" style="width: 200px;">  Ask  Evidence</a></td>
+     {%endif%} -->
+    </tr>
+    {%endfor%}
+</table>
+</center>
+<br><br><br><br><br><br><br><br>
+
+{% include 'footer.html' %}
+

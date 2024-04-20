@@ -1,0 +1,42 @@
+{% include 'court_header.html' %}
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+      <h2><p class="animate__animated animate__fadeInUp">We provide platform that ensures compliance with legal standards and regulations regarding the protection and handling of forensic evidence,thereby upholding the integrity and admissibility of evidence in court.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+  <br><br><br><br><br><br><br><br><br><br>
+<center>
+<h1 id="yy"><b>Ask Evidence</b></h1><br><br>
+<table border="1" class="table table-bordered" style="width: 1200px;">
+<thead class="table-info">
+<tr>
+    <th>Slno</th>
+    <th>Case Number</th>
+    <th>Type of crime</th>
+    <th colspan="7"><center>Evidence</center></th>
+</tr>
+</thead>
+{% for i in data['evid']%}
+<tr>
+    <td>{{loop.index}}</td>
+    <td>{{i['case_num']}}</td>
+    <td>{{i['type_of_crime']}}</td>
+    <td><a href="/viewfingerprint?id={{i['crime_num']}}" class="btn btn-success">Fingerprint</a></td>
+    <td><a href="/viewfootprint?vfid={{i['crime_num']}}" class="btn btn-success">Footprint</a></td>
+    <td><a href="/viewhairtest?hid={{i['crime_num']}}" class="btn btn-success">Hairtest</a></td>
+    <td><a href="/viewpostmortem?pid={{i['crime_num']}}" class="btn btn-success">Postmortem</a></td>
+    <td><a href="/viewteeth?tid={{i['crime_num']}}" class="btn btn-success">Teeth</a></td>
+    <td><a href="/viewvideo?vid={{i['crime_num']}}" class="btn btn-success">Video</a></td>
+    <td><a href="/viewaudio?aid={{i['crime_num']}}" class="btn btn-success">Audio</a></td>
+</tr>
+{%endfor%}
+</table>
+</center>
+<br><br><br><br><br><br><br><br>
+
+{% include 'footer.html' %}
+

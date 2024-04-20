@@ -1,0 +1,51 @@
+
+{% include 'admin_header.html' %}
+<br><br><br><br>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>ForenSecure</h1>
+      <h2>Fortify Forensic Integrity:Double Encryption for Unyielding Security</h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+<br><br><br><br><br><br><br><br><br>
+<center>
+<h1 id="aa"><b>View Registered Police</b></h1><br><br>
+<table border="1" class="table table-bordered">
+    <thead class="table-info" >
+    <tr>
+        <th>Slno</th>
+        <th>Station Register Number</th>
+        <th>Zone</th>
+        <th>District</th>
+        <th>City</th>
+        <th>Pincode</th>
+        <th>Station Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Alternate Phone Number</th>
+    </tr>
+</thead>
+    {%for i in data['view']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['st_reg_num']}}</td>
+        <td>{{i['zone']}}</td>
+        <td>{{i['district']}}</td>
+        <td>{{i['city']}}</td>
+        <td>{{i['pincode']}}</td>
+        <td>{{i['station_name']}}</td>
+        <td>{{i['address']}}</td>
+        <td>{{i['email']}}</td>
+        <td>{{i['phone']}}</td>
+        <td>{{i['alt_phone']}}</td>
+    </tr>
+    {%endfor%}
+</table>
+</center>
+<br><br>
+{% include 'footer.html' %}
+

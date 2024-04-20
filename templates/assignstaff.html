@@ -1,0 +1,46 @@
+{% include 'admin_header.html' %}
+<!-- ======= Hero Section =======
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>ForenSecure</h1>
+      <h2>Fortify Forensic Integrity:Double Encryption for Unyielding Security</h2> -->
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    <!-- </div>
+  </section>End Hero -->
+<br><br><br><br><br><br><br><br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1><b><u>Assign Staff for Collection</u></b></h1><br><br>
+    <form method="post">
+        <table>
+            <tr>
+                <th>Assign Staff</th>
+                <td>
+                    <select name="staff" id="" class="form-control">
+                        {% for i in data['assign']%}
+                        <option value="{{i['fs_id']}}">{{i['fname']}}</option>
+                        {%endfor%}
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="submit"></td>
+        
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>
+<br><br><br><br>
+
+{% include 'footer.html' %}
+

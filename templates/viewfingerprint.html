@@ -1,0 +1,76 @@
+{% include 'court_header.html' %}
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+      <h2><p class="animate__animated animate__fadeInUp">We provide platform that ensures compliance with legal standards and regulations regarding the protection and handling of forensic evidence,thereby upholding the integrity and admissibility of evidence in court.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+  <br><br><br><br><br><br><br><br><br><br>
+
+  <center>
+    {% if data['status'] %}
+
+    <form method="post" enctype="multipart/form-data" >
+
+       <table align="center" style="margin-left:200px;">
+          <tr>
+             <th>Private key</th>
+             <td><input type="file" name="pk"></td>
+          </tr>
+          <tr>
+             <th>En SYm KEy</th>
+             <td><input type="file" name="ensym"></td>
+             
+          </tr>
+          <tr>
+             <td><input type="submit" name="decrypt_datas"></td>
+          </tr>
+       </table>
+
+    </form>
+
+  
+  </center>
+
+  {% else %}
+<center>
+    <h1 id="uu"><b>Fingerprint Evidence</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>Pattern</th>
+        <th>Reference point</th>
+        <th>Method of collection</th>
+        <th>Additional information</th>
+        <th>Image</th>
+        <th>Date_Time</th>
+        
+    </tr>
+    </thead>
+    {%for i in data['view']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['pattern']}}</td>
+        <td>{{i['ref_point']}}</td>
+        <td>{{i['met_of_coll']}}</td>
+        <td>{{i['add_info']}}</td>
+        <td><a href="?action=view_decrypt&ids={{i['fp_id']}}&id={{data['id']}}" style="color: red;">Decrypt</a></td>
+
+        <td>{{i['date_time']}}</td>
+
+
+        <td><a href="{{i['private_key']}}" style="color: red;" download="private_key.txt">Get Private Key</a></td>
+        <td><a href="/download_en_symmetric_key/{{i['en_symmetric_key']}}" style="color: red;">Get En Symmetric Key</a></td>
+        
+         
+    </tr>
+    {%endfor%}
+</table>
+</center>
+{% endif %}
+<br><br><br><br><br><br><br>
+{%include 'footer.html'%}

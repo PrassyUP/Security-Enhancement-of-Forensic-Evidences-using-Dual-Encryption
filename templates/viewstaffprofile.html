@@ -1,0 +1,495 @@
+{% include 'staff_header.html' %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+        <h2><p class="animate__animated animate__fadeInUp">The platform provides features that maintains the integrity of forensic evidence, preventing any unauthorized modifications, alterations, or tampering during storage, transmission, or analysis.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<center>
+    <h1 id="ee"><b>View Staff Profile</b></h1><br><br>
+    <table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+        <th>Slno</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+        <th>State</th>
+        <th>District</th>
+        <th>City</th>
+        <th>Address</th>
+        <th>Pincode</th>
+        <th>Phone</th>
+        <th>Alternate Phone Number</th>
+        <th>Email</th>
+        <th>Date of Joining</th>
+        <th>Photo</th>
+    </tr>
+    </thead>
+    {%for i in data['update']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['fname']}}</td>
+        <td>{{i['lname']}}</td>
+        <td>{{i['gender']}}</td>
+        <td>{{i['dob']}}</td>
+        <td>{{i['state']}}</td>
+        <td>{{i['district']}}</td>
+        <td>{{i['city']}}</td>
+        <td>{{i['address']}}</td>
+        <td>{{i['pincode']}}</td>
+        <td>{{i['phone']}}</td>
+        <td>{{i['alt_phone']}}</td>
+        <td>{{i['email']}}</td>
+        <td>{{i['doj']}}</td>
+    
+        <td><img src="{{i['photo']}}" alt="" width="200px" height="200px"></td>
+        <td><a href="?action=update&fid={{i['fs_id']}}" class="btn btn-success">Update</a></td>
+    </tr>
+    {%endfor%}
+</table>
+</center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%if data['upd']%}
+    <!-- <form method="post">
+        <table>
+            <tr>
+                <th>First Name</th>
+                <td><input type="text" name="fname" value="{{data['upd'][0]['fname']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td><input type="text" name="lname" value="{{data['upd'][0]['lname']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td><input type="radio" name="gender" value="male">Male <input type="radio" name="gender" value="female">Female</td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td><input type="date" name="dob" value="{{data['upd'][0]['dob']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td><input type="text" name="astate" value="{{data['upd'][0]['state']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>District</th>
+                <td><input type="text" name="adist" value="{{data['upd'][0]['district']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td><input type="text" name="acity" value="{{data['upd'][0]['city']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td><input type="text" name="aaddress" value="{{data['upd'][0]['address']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>Pincode</th>
+                <td><input type="number" name="apincode" value="{{data['upd'][0]['pincode']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td><input type="number" name="aphone" value="{{data['upd'][0]['phone']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>Alternate Phone Number</th>
+                <td><input type="number" name="aphone1" value="{{data['upd'][0]['alt_phone']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="aemail" value="{{data['upd'][0]['email']}}"id=""></td>
+            </tr>
+            <tr>
+                <th>Date of Joining</th>
+                <td><input type="date" name="doj" value="{{data['upd'][0]['doj']}}" id=""></td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td><input type="file" name="aphoto" value="{{data['upd'][0]['photo']}}" id=""></td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" name="updates" id=""></th>
+            </tr>
+        </table>
+    </form> -->
+    
+    <html lang="tr">
+
+<head>
+
+
+    <style>
+         body{
+            background-image: url("");
+            background-size: cover;
+            background-repeat: no-repeat;
+        } 
+    </style>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Bootstrap 4 Register Form</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-horizontal" role="form" method="POST">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h2 align="center">Update Staff Profile</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="name">First Name</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="fname" value="{{data['upd'][0]['fname']}}" class="form-control" id="name" placeholder="Enter First Name" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="name">Last Name</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="lname" value="{{data['upd'][0]['lname']}}"class="form-control" id="name" placeholder="Enter Last Name" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="gender">Gender</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            Male<input type="radio" name="gender" value="male" class="form-control" id="surname">Female<input type="radio" name="gender" value="female" class="form-control" id="surname">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="dob">Date of Birth</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="date" name="dob" value="{{data['upd'][0]['dob']}}" class="form-control" id="surname" placeholder="Type" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="state">State</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="astate" value="{{data['upd'][0]['state']}}" class="form-control" id="surname" placeholder="State" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="district">District</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="adist" value="{{data['upd'][0]['district']}}" class="form-control" id="surname" placeholder="District" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="email">City</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="acity" value="{{data['upd'][0]['city']}}" class="form-control" id="surname" placeholder="Address" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="address">Address</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="aaddress" value="{{data['upd'][0]['address']}}" class="form-control" id="surname" placeholder="Pincode" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="pincode">Pincode</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-at"></i>
+                            </div> -->
+                            <input type="number" name="apincode" value="{{data['upd'][0]['pincode']}}" class="form-control" id="email" placeholder="you@example.com" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="phoneno">Phone Number</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="number" name="aphone" value="{{data['upd'][0]['phone']}}" class="form-control" id="surname" placeholder="" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="altphoneno">Alternate Phone Number</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="number" name="aphone1" value="{{data['upd'][0]['alt_phone']}}" class="form-control" id="surname" placeholder="" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="text" name="aemail" value="{{data['upd'][0]['email']}}" class="form-control" id="surname" placeholder="Email" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="doj">Date of Joining</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <!-- <div class="input-group-addon" style="width: 2.6rem">
+                                <i class="fa fa-user"></i>
+                            </div> -->
+                            <input type="date" name="doj" value="{{data['upd'][0]['doj']}}" class="form-control" id="surname" placeholder="Address" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-3 field-label-responsive">
+                    <label for="photo">Photo</label>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                             <div class="input-group-addon" style="width: 2.6rem"> -->
+                                <!-- <i class="fa fa-user"></i>
+                            </div> -->
+                            <!-- <input type="file" name="aphoto" value="{{data['upd'][0]['photo']}}" class="form-control" id="surname" placeholder="Address" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div> --> 
+           
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <button type="submit" id="button"  name="updates" class="btn btn-success">
+                        <i class="fa fa-user-plus"></i>Update</button>
+                   
+                </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Username</th>
+            <th scope="col">Register Date</th>
+            <th scope="col">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table> -->
+
+<script src="script.js"></script>
+
+</html>
+
+<script>
+    var userList = [];
+
+var config = {
+    date: {
+        day: "2-digit",
+        year: "numeric",
+        month: "long",
+        hour: "numeric",
+        minute: "2-digit"
+    }
+}
+
+var generateGUID = () => {
+    var s4 = () => {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
+var generateRow = user => `<tr>
+        <td>
+        ${user.name}
+        </td>
+        <td>
+        ${user.surname}
+        </td>
+        <td>
+        ${user.email}
+        </td>
+        <td>
+        ${user.username}
+        </td>
+        <td>
+        ${user.createDate.toLocaleDateString("tr", config.date)}
+        </td>
+        <td>
+            <button data-user="${user.id}" class="del">Del</button>
+            <button data-user="${user.id}" class="edit">Edit</button>
+        </td>
+    </tr>`;
+
+
+
+$("#button").click(() => {
+    let user = {
+        name: $('#name').val(),
+        surname: $('#surname').val(),
+        email: $('#email').val(),
+        username: $('#username').val(),
+        createDate: new Date(),
+        id: generateGUID()
+    };
+
+    userList.push(user);
+
+    let row = $(generateRow(user));
+
+    $(row).find(".del").click(function () {
+        if (window.confirm("Do you really want to delete?")) {
+            $(row).remove();
+        }
+    });
+
+    $(row).find(".edit").click(function () {
+        $("#edit").show();
+        $("#button").hide();
+    });
+
+
+
+    $('tbody').append(row);
+
+});
+
+
+
+</script>
+{%endif%}
+<br><br><br><br>
+{% include 'footer.html'%}

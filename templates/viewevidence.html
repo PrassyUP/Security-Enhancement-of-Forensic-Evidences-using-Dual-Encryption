@@ -1,0 +1,53 @@
+{% include 'court_header.html' %}
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1><p class="animate__animated animate__fadeInDown">ForenSecure</p></h1>
+      <h2><p class="animate__animated animate__fadeInUp">We provide platform that ensures compliance with legal standards and regulations regarding the protection and handling of forensic evidence,thereby upholding the integrity and admissibility of evidence in court.</p></h2>
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+    </div>
+  </section><!-- End Hero -->
+  <br><br><br><br><br><br><br><br><br><br>
+  <center>
+<h1 id="tt"><b>Evidence</b></h1><br><br>
+<table border="1" class="table table-bordered">
+    <thead class="table-info">
+    <tr>
+    <th>req_ev_no</th>
+    <th>Case num</th>
+    <th>type of crime</th>
+    <th>crime_num</th>
+    <th>court_id</th>
+    <th>evidence_status</th>
+</tr>
+    </thead>
+{%for i in data['req']%}
+<tr>
+    <td>{{i['req_ev_no']}}</td>
+    <td>{{i['case_num']}}</td>
+    <td>{{i['type_of_crime']}}</td>
+    <td>{{i['crime_num']}}</td>
+    <td>{{i['court_id']}}</td>
+    <td>{{i['evidence_status']}}</td>
+
+    {% if i['evidence_status']=='accepted' %}
+
+    <td> <a href="/viewfingerprint?id={{i['crime_num']}}#uu" class="btn btn-success">Fingerprint</a></td>
+    <td> <a href="/viewfootprint?vfid={{i['crime_num']}}#uv" class="btn btn-success">Footprint</a></td>
+    <td> <a href="/viewhairtest?hid={{i['crime_num']}}#uw" class="btn btn-success">Hairtest</a></td>
+    <td><a href="/viewpostmortem?pid={{i['crime_num']}}#ux" class="btn btn-success">Postmortem</a></td>
+    <td><a href="/viewteeth?tid={{i['crime_num']}}#uy" class="btn btn-success">Teeth</a></td>
+    <td><a href="/viewvideo?id={{i['crime_num']}}#uz" class="btn btn-success">Video</a></td>
+    <td><a href="/viewaudio?id={{i['crime_num']}}#ua" class="btn btn-success">Audio</a></td>
+   
+
+   
+
+{% endif %}
+</tr>
+{%endfor%}
+</table>
+</center>
+<br><br><br><br><br><br><br>
+{% include 'footer.html' %}
